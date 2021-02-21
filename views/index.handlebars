@@ -1,1 +1,19 @@
 <p>ITS BORGER TIME</p>
+
+<div class="lists">
+    <ol>
+        WAITING
+        {{#each waitingList}}
+        <li data-id="{{id}}">{{name}}</li>
+        {{/each}}
+    </ol>
+</div>
+
+<div class="lists">
+    <ol>
+        DEVOURED
+        {{#each devouredList}}
+        <li data-id="{{id}}">{{name}}</li>
+        {{/each}}
+    </ol>
+</div>
