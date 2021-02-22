@@ -1,19 +1,25 @@
 <p>ITS BORGER TIME</p>
 
 <div class="lists">
+        <p>WAITING</p>
     <ol>
-        WAITING
         {{#each waitingList}}
         <li data-id="{{id}}">{{name}}</li>
+        <button data-id="{{id}}">Delete</button>
         {{/each}}
     </ol>
 </div>
 
 <div class="lists">
+        <p>DEVOURED</p>
     <ol>
-        DEVOURED
         {{#each devouredList}}
         <li data-id="{{id}}">{{name}}</li>
         {{/each}}
     </ol>
 </div>
+
+<form>
+    <input type="text" id="name" placeholder="Burger name">
+    <button id="submitBtn">Submit</button>
+</form>

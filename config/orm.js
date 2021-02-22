@@ -14,8 +14,12 @@ var orm = {
     swapTables: function(neededparams, cb){
         //insert into devoured select from waiting where info (i think)
     },
-    create: function(neededparams, cb){
-        //create borger
+    create: function(name, cb){
+        var queryString = "INSERT INTO waiting (name) VALUES (?);"
+        connection.query(queryString, [name], function(err, result){
+          if (err) throw err;
+          cb(result);
+        });
     }
 };
 
