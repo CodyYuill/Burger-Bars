@@ -19,9 +19,17 @@ router.get("/", function(req, res){
     });
 });
 
-router.post("/api/burgers", function(req, res){
+router.post("/api/add-burgers", function(req, res){
     var burgerName = req.body.name;
     model.create(burgerName, function(result){
+        res.json({id: result.insertId});
+    });
+});
+
+router.post("/api/devour-burgers/:id", function(req, res){
+    console.log("hit2");
+    var id  = req.params.id;
+    model.swapTables("waiting", "devoured", id, function(result){
         res.json({id: result.insertId});
     });
 });
