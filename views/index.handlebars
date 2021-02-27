@@ -1,17 +1,19 @@
-<p>ITS BORGER TIME</p>
+<h1>EAT-DA-BURGER</h1>
 
 <div class="lists">
-        <p>WAITING</p>
+        <p class="listTitle">WAITING</p>
     <ol>
         {{#each waitingList}}
-        <li data-id="{{id}}">{{name}}</li>
-        <button data-id="{{id}}" class="devourBtn">Devour!</button>
+        <li data-id="{{id}}">
+            {{name}}
+            <button data-id="{{id}}" class="devourBtn">Devour!</button>
+        </li>
         {{/each}}
     </ol>
 </div>
 
 <div class="lists">
-        <p>DEVOURED</p>
+        <p class="listTitle">DEVOURED</p>
     <ol>
         {{#each devouredList}}
         <li data-id="{{id}}">{{name}}</li>
@@ -22,6 +24,6 @@
 <div>
     <form id="submit">
         <input type="text" id="name" placeholder="Burger name">
-        <button type="submit">Submit</button>
+        <button type="submit" id="submitBtn">Submit</button>
     </form>
 </div>
